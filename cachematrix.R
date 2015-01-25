@@ -20,15 +20,15 @@ makeCacheMatrix <- function(a = matrix()) {
 
 ## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
-  m <- x$getinverse()
+cacheSolve <- function(a, ...) {
+  m <- a$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
     return(m)
   }
-  data <- x$get()
+  data <- a$get()
   m <- solve(data, ...)
-  x$setinverse(m)
+  a$setinverse(m)
   m
 }
 
